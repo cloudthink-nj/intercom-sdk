@@ -1,6 +1,6 @@
 # 可视对讲通用解决方案
 
-[![JitPack](https://jitpack.io/v/cloudthink-nj/BLIntercomSdk.svg)](https://jitpack.io/#cloudthink-nj/BLIntercomSdk)
+[![JitPack](https://jitpack.io/v/cloudthink-nj/intercom-sdk.svg)](https://jitpack.io/#cloudthink-nj/intercom-sdk)
 ```groovy
 // add in your root build.gradle at the end of repositories
 allprojects {
@@ -12,7 +12,7 @@ allprojects {
 ```
 
 ```groovy
-implementation 'com.github.cloudthink-nj:BLIntercomSdk:$latest_version'
+implementation 'com.github.cloudthink-nj:intercom-sdk:$latest_version'
 ```
 
 ## 可视对讲App Demo(app-demo目录)
