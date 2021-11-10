@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">可视对讲Demo</string>
+
+    <string name="intercom_calling">正在呼叫</string>
+    <string name="intercom_accept">接听</string>
+    <string name="intercom_hangup">挂断</string>
+    <string name="intercom_open">开门</string>
+</resources>

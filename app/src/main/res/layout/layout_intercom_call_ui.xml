@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_call_ui">
+
+    <TextureView
+        android:id="@+id/tv_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/pic_portrait_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/pic_avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_intercom_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <TextView
+        android:id="@+id/tv_call_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/intercom_calling"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_26"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_user" />
+
+    <Button
+        android:id="@+id/btn_intercom_accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:drawableTop="@drawable/icon_accept_call_selector"
+        android:drawablePadding="10dp"
+        android:text="@string/intercom_accept"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_22"
+        app:layout_constraintBottom_toTopOf="@id/guideline_intercom_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_intercom_hangup"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_intercom_hangup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:drawableTop="@drawable/icon_hangup_call_selector"
+        android:drawablePadding="10dp"
+        android:text="@string/intercom_hangup"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_22"
+        app:layout_constraintBottom_toTopOf="@id/guideline_intercom_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_intercom_open"
+        app:layout_constraintStart_toEndOf="@id/btn_intercom_accept" />
+
+    <Button
+        android:id="@+id/btn_intercom_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:drawableTop="@drawable/icon_open_door_selector"
+        android:drawablePadding="10dp"
+        android:text="@string/intercom_open"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_22"
+        app:layout_constraintBottom_toTopOf="@id/guideline_intercom_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toEndOf="@id/btn_intercom_hangup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
