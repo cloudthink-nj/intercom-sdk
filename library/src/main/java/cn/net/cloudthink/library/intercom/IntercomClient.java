@@ -22,7 +22,7 @@ import cn.net.cloudthink.smartmirror.intercom.IIntercomService;
  * @Email: zhaoyang.lv@broadlink.com.cn
  * @Description: IntercomClient
  */
-abstract class IntercomClient {
+public abstract class IntercomClient {
 
     private IIntercomService mIntercomBinder = null;
 
@@ -73,7 +73,7 @@ abstract class IntercomClient {
 
     abstract void onBinderDied();
 
-    public void bind(Context context, String packageName, String action) {
+    public void bindService(Context context, String packageName, String action) {
         if (mIntercomBinder == null) {
             Intent intent = new Intent(action);
             intent.setPackage(packageName);
@@ -81,7 +81,7 @@ abstract class IntercomClient {
         }
     }
 
-    public void unbind(Context context) {
+    public void unbindService(Context context) {
         if (mIntercomBinder != null) {
             try {
                 mIntercomBinder.removeCallback(mCallback);
@@ -93,7 +93,7 @@ abstract class IntercomClient {
         }
     }
 
-    public void requestAction(final String action, final String data) {
+    public void request(final String action, final String data) {
         mCachedThreadPool.execute(new Runnable() {
             @Override
             public void run() {
