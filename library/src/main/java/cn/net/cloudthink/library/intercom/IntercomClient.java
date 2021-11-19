@@ -26,7 +26,7 @@ import cn.net.cloudthink.smartmirror.intercom.IIntercomService;
  */
 public abstract class IntercomClient {
 
-    private IIntercomService mIntercomBinder = null;
+    public IIntercomService mIntercomBinder = null;
 
     private final ExecutorService mCachedThreadPool = Executors.newCachedThreadPool();
 
