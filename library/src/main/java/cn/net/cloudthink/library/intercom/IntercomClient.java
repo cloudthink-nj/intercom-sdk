@@ -37,7 +37,9 @@ public abstract class IntercomClient {
             mIntercomBinder = IIntercomService.Stub.asInterface(service);
             if (mIntercomBinder != null) {
                 try {
-                    mIntercomBinder.addCallback(mCallback);
+                    if (BuildConfig.VERSION_CODE >= 10) {
+                        mIntercomBinder.addCallback(mCallback);
+                    }
                     service.linkToDeath(mRecipient, 0);
                 } catch (RemoteException e) {
                     Log.e(TAG, "onServiceConnected ", e);
@@ -90,7 +92,9 @@ public abstract class IntercomClient {
     public void unbindService(Context context) {
         if (mIntercomBinder != null) {
             try {
-                mIntercomBinder.removeCallback(mCallback);
+                if (BuildConfig.VERSION_CODE >= 10) {
+                    mIntercomBinder.removeCallback(mCallback);
+                }
                 context.unbindService(mConnection);
             } catch (RemoteException e) {
                 Log.e(TAG, "unbind ", e);
