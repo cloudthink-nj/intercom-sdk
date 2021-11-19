@@ -6,8 +6,10 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
@@ -63,8 +65,8 @@ public abstract class IntercomClient {
         public void binderDied() {
             if (mIntercomBinder != null) {
                 mIntercomBinder.asBinder().unlinkToDeath(this, 0);
-                mIntercomBinder = null;
             }
+            mIntercomBinder = null;
             onBinderDied();
         }
     };
@@ -73,8 +75,12 @@ public abstract class IntercomClient {
 
     public abstract void onBinderDied();
 
+    public boolean isBound() {
+        return mIntercomBinder != null;
+    }
+
     public void bindService(Context context, String packageName, String action) {
-        if (mIntercomBinder == null) {
+        if (mIntercomBinder == null && isAppInstalled(context, packageName)) {
             Intent intent = new Intent(action);
             intent.setPackage(packageName);
             context.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
@@ -108,5 +114,15 @@ public abstract class IntercomClient {
                 }
             }
         });
+    }
+
+    private boolean isAppInstalled(Context context, String pkgName) {
+        if (TextUtils.isEmpty(pkgName)) return false;
+        PackageManager pm = context.getPackageManager();
+        try {
+            return pm.getApplicationInfo(pkgName, 0).enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }
