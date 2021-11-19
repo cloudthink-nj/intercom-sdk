@@ -69,9 +69,9 @@ public abstract class IntercomClient {
         }
     };
 
-    abstract void onHandleAction(String action, String data);
+    public abstract void onHandleAction(String action, String data);
 
-    abstract void onBinderDied();
+    public abstract void onBinderDied();
 
     public void bindService(Context context, String packageName, String action) {
         if (mIntercomBinder == null) {
