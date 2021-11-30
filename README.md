@@ -102,14 +102,21 @@ public interface AidlAction {
     String ACTION_CALL_ELEVATOR = "action_call_elevator";
 
     /* *
-     * 异步返回物业公告数据 jsonString
+     * 通过IIntercomCallback 异步返回物业公告通知数据 jsonString
      */
     String ACTION_CALLBACK_CENTER_MESSAGE = "action_callback_center_message";
 
     /* *
-     * 异步返回未接来电 jsonString
+     * 通过IIntercomCallback 异步返回未接来电 jsonString
      */
     String ACTION_CALLBACK_MISS_INTERCOM = "action_callback_miss_intercom";
+}
+```
+### 异步回调
+```aidl
+interface IIntercomCallback {
+    //回调
+    void onIntentAction(String action, String data);
 }
 ```
 
