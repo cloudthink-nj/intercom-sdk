@@ -1,6 +1,6 @@
 # 可视对讲通用解决方案
 
-[![JitPack](https://jitpack.io/v/cloudthink-nj/intercom-sdk.svg)](https://jitpack.io/#cloudthink-nj/intercom-sdk)
+[![](https://www.jitpack.io/v/icloudthink/intercom-sdk.svg)](https://www.jitpack.io/#icloudthink/intercom-sdk)
 ```groovy
 // add in your root build.gradle at the end of repositories
 allprojects {
