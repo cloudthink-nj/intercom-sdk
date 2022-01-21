@@ -12,7 +12,7 @@ allprojects {
 ```
 
 ```groovy
-implementation 'com.github.cloudthink-nj:intercom-sdk:$latest_version'
+implementation 'com.github.icloudthink:intercom-sdk:$latest_version'
 ```
 
 ## 可视对讲App Demo(app-demo目录)
