@@ -29,47 +29,40 @@ public class IntercomServiceImpl extends IIntercomService.Stub {
 
     protected final RemoteCallbackList<IIntercomCallback> mCallbackList = new RemoteCallbackList<>();
 
-    @Deprecated
     @Override
     public String getBrandName() throws RemoteException {
         return null;
     }
 
-    @Deprecated
     @Override
     public int getVersionCode() throws RemoteException {
         return BuildConfig.VERSION_CODE;
     }
 
-    @Deprecated
     @Override
     public int openConfigView() throws RemoteException {
         mListener.requestAction(ACTION_SHOW_CONFIG, null);
         return 0;
     }
 
-    @Deprecated
     @Override
     public int openDialerView() throws RemoteException {
         mListener.requestAction(ACTION_SHOW_DIALER, null);
         return 0;
     }
 
-    @Deprecated
     @Override
     public int callUnitDevice() throws RemoteException {
         mListener.requestAction(ACTION_CALL_UNIT_DEVICE, null);
         return 0;
     }
 
-    @Deprecated
     @Override
     public int callManagement() throws RemoteException {
         mListener.requestAction(ACTION_CALL_CENTER_DEVICE, null);
         return 0;
     }
 
-    @Deprecated
     @Override
     public int emergencyHelp(int alarmType) throws RemoteException {
         try {
@@ -82,7 +75,6 @@ public class IntercomServiceImpl extends IIntercomService.Stub {
         return 0;
     }
 
-    @Deprecated
     @Override
     public int callElevator(int type, int curFloor, int destFloor, boolean direction) throws RemoteException {
         try {
