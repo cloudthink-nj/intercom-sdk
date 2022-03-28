@@ -41,6 +41,7 @@ public abstract class IntercomClient {
                         mIntercomBinder.addCallback(mCallback);
                     }
                     service.linkToDeath(mRecipient, 0);
+                    onBinderConnected();
                 } catch (RemoteException e) {
                     Log.e(TAG, "onServiceConnected ", e);
                 }
@@ -74,6 +75,8 @@ public abstract class IntercomClient {
     };
 
     public abstract void onHandleAction(String action, String data);
+
+    public abstract void onBinderConnected();
 
     public abstract void onBinderDied();
 
