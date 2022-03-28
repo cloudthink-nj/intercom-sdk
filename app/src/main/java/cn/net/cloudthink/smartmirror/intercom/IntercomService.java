@@ -53,7 +53,7 @@ public class IntercomService extends Service implements IRequestInterface {
 
             @Override
             public void accept(NotificationCompat.Builder builder) {
-                builder.setContentTitle("思必驰语音助手");
+                builder.setContentTitle("可视对讲App");
                 builder.setContentText("正在运行中...");
                 builder.setWhen(System.currentTimeMillis());
                 builder.setSmallIcon(R.mipmap.ic_launcher);
