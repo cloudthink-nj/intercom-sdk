@@ -30,7 +30,7 @@ public interface AidlAction {
 
     /* *
      * 配置参数
-     * data 为{"building":"8","unit":"2","floor":"3","family":"1","familyNo":"08020301"}
+     * data 为 {"building":8,"unit":2,"floor":3,"room":1,"familyNum":"0802-0301"}
      */
     String ACTION_SET_CONFIG = "action_set_config";
 

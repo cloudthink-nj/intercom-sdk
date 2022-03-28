@@ -97,7 +97,7 @@ public class IntercomService extends Service implements IRequestInterface {
             showConfigView();
         } else if (action.equals(BLAidlAction.ACTION_SET_CONFIG)) {
             // 后面会通过主程序自动配置家庭的楼栋单元房号等等
-            // data {"building":8,"unit":2,"floor":3,"family":1,"familyNo":"0802-0301"}
+            // data {"building":8,"unit":2,"floor":3,"room":1,"familyNum":"0802-0301"}
             //setIntercomConfig()
         } else if (action.equals(BLAidlAction.ACTION_SHOW_DIALER)) {
             //showDialerView()
