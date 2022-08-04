@@ -3,6 +3,7 @@
 ## 可视对讲App Demo(app-demo目录)
 
 需要实现IIntercomService.aidl中的接口 若需要扩展方法，双方约定好action以及json结构即可
+Service的Action 必须和demo一致
 
 ```java
 public interface AidlAction {
