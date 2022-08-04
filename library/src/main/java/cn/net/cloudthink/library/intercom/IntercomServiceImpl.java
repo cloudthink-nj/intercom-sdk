@@ -80,7 +80,7 @@ public class IntercomServiceImpl extends IIntercomService.Stub {
         try {
             JSONObject obj = new JSONObject();
             obj.put("type", type);
-            obj.put("curFloor", curFloor);
+//            obj.put("curFloor", curFloor);
             obj.put("destFloor", destFloor);
             obj.put("direction", direction);
             mListener.requestAction(ACTION_CALL_ELEVATOR, obj.toString());
